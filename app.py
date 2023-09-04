@@ -1,3 +1,16 @@
+"""
+-------------------------------------------------------------------------------
+Filename:           app.py
+Description:        
+Author:             Mekan Jumayev
+Author Email:       contact@mikejuma.com
+Created:            Date (e.g., 2023-09-04)
+Last Updated:       Date (e.g., 2023-09-04)
+Version:            1.0
+License:            
+-------------------------------------------------------------------------------
+"""
+
 import os
 import json
 import logging

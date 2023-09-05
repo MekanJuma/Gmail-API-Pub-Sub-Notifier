@@ -58,7 +58,7 @@ def setup_gmail_api():
 if __name__ == "__main__":
     service = setup_gmail_api()
     if service:
-        topic_name = 'projects/koochat-291910/topics/gmail_notifications'
+        topic_name = 'projects/your project id/topics/topic name'
         watch_gmail_inbox(service, 'me', topic_name)
         print('Watch setup success!')
     else:

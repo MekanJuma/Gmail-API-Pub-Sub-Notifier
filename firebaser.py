@@ -49,6 +49,18 @@ class FirebaseController:
         except Exception as e:
             print(f"An error occurred during writing data: {e}")
             return False
+
+    def is_email_sent(self, msg_id):
+        try:
+            existing_data = self.ref.get()
+            if existing_data is not None:
+                for value in existing_data.values():
+                    if str(msg_id) == str(value.get("msg_id")):
+                        return True  # msg sent
+            return False  # msg not sent
+        except Exception as e:
+            print(f"An error occurred during checking if email sent: {e}")
+            return False
     
     def get_history_id(self):
         try:

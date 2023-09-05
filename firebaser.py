@@ -17,7 +17,7 @@ class FirebaseController:
             self.cred = credentials.Certificate("firebase-private-key.json")
             self.app = firebase_admin.initialize_app(
                 self.cred,
-                {"databaseURL": "https://quick-summer-397615-default-rtdb.firebaseio.com/"},
+                {"databaseURL": "https://......firebaseio.com/"},
             )
             self.db = db
             self.ref = self.db.reference("/emails")
@@ -48,18 +48,6 @@ class FirebaseController:
                 self.ref.push(data)
         except Exception as e:
             print(f"An error occurred during writing data: {e}")
-            return False
-    
-    def is_email_sent(self, msg_id):
-        try:
-            existing_data = self.ref.get()
-            if existing_data is not None:
-                for value in existing_data.values():
-                    if str(msg_id) == str(value.get("msg_id")):
-                        return True  # msg sent
-            return False  # msg not sent
-        except Exception as e:
-            print(f"An error occurred during checking if video exists: {e}")
             return False
     
     def get_history_id(self):
